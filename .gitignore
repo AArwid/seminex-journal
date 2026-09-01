@@ -1,0 +1,7 @@
+node_modules/
+.env
+coverage/
+data/*.db
+data/*.db-*
+!data/.gitkeep
+agent.md

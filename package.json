@@ -1,0 +1,32 @@
+{
+  "name": "seminex-journal",
+  "version": "1.0.0",
+  "description": "Verifierbart journal- och insemineringssystem för hästar med Proof-of-Work.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AArwid/seminex-journal.git"
+  },
+  "keywords": [],
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/AArwid/seminex-journal/issues"
+  },
+  "homepage": "https://github.com/AArwid/seminex-journal#readme",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2",
+    "vitest": "^4.1.11"
+  }
+}
