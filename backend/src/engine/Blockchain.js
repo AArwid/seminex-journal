@@ -1,4 +1,5 @@
 import { Block } from "./Block.js";
+import { BadRequestError, UnprocessableEntityError } from "../errors.js";
 
 const GENESIS_TIMESTAMP = "2026-01-01T00:00:00.000Z";
 
@@ -37,7 +38,7 @@ export class Blockchain {
       typeof transaction.payload !== "object" ||
       transaction.payload === null
     ) {
-      throw new Error("Invalid transaction: missing required fields");
+      throw new BadRequestError("Invalid transaction: missing required fields");
     }
 
     const minedTransactions = this.getMinedTransactions();
@@ -51,7 +52,7 @@ export class Blockchain {
           tx.payload?.occasion === transaction.payload?.occasion,
       );
       if (duplicate) {
-        throw new Error(
+        throw new UnprocessableEntityError(
           "Duplicate vaccination for this horse, vaccine and occasion",
         );
       }
@@ -62,7 +63,7 @@ export class Blockchain {
         (tx) => tx.type === "mating" && tx.horseId === transaction.horseId,
       );
       if (conflict) {
-        throw new Error(
+        throw new UnprocessableEntityError(
           "Conflicting mating event already approved for this horse",
         );
       }
