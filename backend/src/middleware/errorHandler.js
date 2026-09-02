@@ -1,6 +1,5 @@
 import { AppError } from "../errors.js";
 
-// eslint-disable-next-line no-unused-vars -- Express requires a 4-arg signature for error middleware.
 export function errorHandler(err, req, res, next) {
   if (err instanceof AppError) {
     res.status(err.statusCode).json({ error: err.message });
