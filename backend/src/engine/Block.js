@@ -1,6 +1,5 @@
 import { createHash } from "node:crypto";
 
-// Deterministic JSON stringify: sorts object keys recursively for stable hashing.
 function stableStringify(value) {
   if (Array.isArray(value)) {
     return `[${value.map(stableStringify).join(",")}]`;

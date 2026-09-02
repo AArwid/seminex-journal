@@ -1,7 +1,7 @@
 import { Block } from "./Block.js";
 import { BadRequestError, UnprocessableEntityError } from "../errors.js";
 
-const GENESIS_TIMESTAMP = "2026-01-01T00:00:00.000Z";
+const GENESIS_TIMESTAMP = "2026-09-01T00:00:00.000Z";
 
 function isNonEmptyString(value) {
   return typeof value === "string" && value.length > 0;
